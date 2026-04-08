@@ -26,13 +26,16 @@
             android:layout_height="wrap_content"
             android:hint="Goal Name"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/text_secondary"
+            app:boxStrokeColor="@color/teal_primary"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etGoalName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
                 android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -42,13 +45,16 @@
             android:layout_height="wrap_content"
             android:hint="Target Amount (R)"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/text_secondary"
+            app:boxStrokeColor="@color/teal_primary"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTargetAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
                 android:inputType="numberDecimal"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -58,13 +64,16 @@
             android:layout_height="wrap_content"
             android:hint="Target Date (YYYY-MM-DD)"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/text_secondary"
+            app:boxStrokeColor="@color/teal_primary"
             android:layout_marginBottom="24dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTargetDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
                 android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
