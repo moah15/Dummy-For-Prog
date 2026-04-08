@@ -11,11 +11,10 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Expense"
+            android:text="Add Transaction"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
@@ -27,14 +26,18 @@
             android:layout_height="wrap_content"
             android:hint="Amount (R)"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/text_secondary"
+            app:boxStrokeColor="@color/teal_primary"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
-                android:inputType="numberDecimal"/>
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/surface"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,14 +47,18 @@
             android:layout_height="wrap_content"
             android:hint="Description"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintTextColor="@color/text_secondary"
+            app:boxStrokeColor="@color/teal_primary"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
-                android:inputType="text"/>
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
+                android:inputType="text"
+                android:backgroundTint="@color/surface"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +77,7 @@
             android:layout_height="56dp"
             android:text="Select Date"
             android:backgroundTint="@color/surface"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
         <!-- Start Time -->
@@ -88,7 +95,7 @@
             android:layout_height="56dp"
             android:text="Select Start Time"
             android:backgroundTint="@color/surface"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
         <!-- End Time -->
@@ -106,7 +113,7 @@
             android:layout_height="56dp"
             android:text="Select End Time"
             android:backgroundTint="@color/surface"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
         <!-- Category -->
@@ -123,14 +130,18 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/surface"
+            android:backgroundTint="@color/surface"
+            android:popupBackground="@color/surface"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Income or Expense toggle -->
+        <!-- Income toggle -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:background="@color/surface"
+            android:padding="12dp"
             android:layout_marginBottom="16dp">
 
             <TextView
@@ -138,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Mark as Income"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
                 android:textSize="16sp"/>
 
             <Switch
@@ -146,11 +157,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:thumbTint="@color/teal_primary"
-                android:trackTint="@color/surface"/>
+                android:trackTint="@color/divider"/>
 
         </LinearLayout>
 
-        <!-- Monthly Goal SeekBar -->
+        <!-- SeekBar -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -178,7 +189,7 @@
             android:thumbTint="@color/teal_primary"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Photo Section -->
+        <!-- Photo -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -214,7 +225,6 @@
 
         </LinearLayout>
 
-        <!-- Photo Preview -->
         <ImageView
             android:id="@+id/ivPhotoPreview"
             android:layout_width="match_parent"
@@ -223,12 +233,11 @@
             android:visibility="gone"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Save Button -->
         <Button
             android:id="@+id/btnSaveExpense"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Save Expense"
+            android:text="Save Transaction"
             android:backgroundTint="@color/teal_primary"
             android:textColor="@color/background"
             android:textSize="16sp"
