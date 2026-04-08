@@ -25,7 +25,8 @@
 
         <activity android:name=".ui.auth.RegisterActivity"
             android:exported="false"/>
-
+        <activity android:name=".ui.main.TransactionDetailActivity"
+            android:exported="false"/>
         <activity android:name=".ui.main.MainActivity"
             android:exported="false"/>
 
