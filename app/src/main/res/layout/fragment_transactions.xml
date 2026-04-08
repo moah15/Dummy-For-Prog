@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transactions"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnAddExpense"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="+ Add Transaction"
+        android:backgroundTint="@color/teal_primary"
+        android:textColor="@color/background"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Filter buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnFilterAll"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="All"
+            android:backgroundTint="@color/teal_primary"
+            android:textColor="@color/background"
+            android:layout_marginEnd="4dp"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btnFilterIncome"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Income"
+            android:backgroundTint="@color/surface"
+            android:textColor="@color/income_green"
+            android:layout_marginEnd="4dp"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btnFilterExpense"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Expenses"
+            android:backgroundTint="@color/surface"
+            android:textColor="@color/expense_red"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <!-- Date filter row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnStartDate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="From Date"
+            android:backgroundTint="@color/surface"
+            android:textColor="@color/text_secondary"
+            android:layout_marginEnd="4dp"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/btnEndDate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="To Date"
+            android:backgroundTint="@color/surface"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNoTransactions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No transactions yet. Add your first one!"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

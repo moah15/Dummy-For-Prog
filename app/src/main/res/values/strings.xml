@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BudgetQuest</string>
+    <string name="app_subtitle">Financial Management</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="transactions">Transactions</string>
+    <string name="goals">Goals</string>
+    <string name="achievements">Achievements</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="total_income">Total Income</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="add_goal">Add Goal</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="no_expenses_yet">No expenses yet</string>
+</resources>
