@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -14,26 +20,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BudgetQuest">
 
+        <!-- Splash is now the entry point -->
         <activity
-            android:name=".ui.auth.LoginActivity"
-            android:exported="true">
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BudgetQuest.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.auth.RegisterActivity"
-            android:exported="false"/>
-        <activity android:name=".ui.main.TransactionDetailActivity"
-            android:exported="false"/>
-        <activity android:name=".ui.main.MainActivity"
+        <activity
+            android:name=".ui.auth.LoginActivity"
             android:exported="false"/>
 
-        <activity android:name=".ui.main.AddExpenseActivity"
+        <activity
+            android:name=".ui.auth.RegisterActivity"
             android:exported="false"/>
 
-        <activity android:name=".ui.main.AddGoalActivity"
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.main.AddExpenseActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.main.AddGoalActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.main.TransactionDetailActivity"
             android:exported="false"/>
 
         <provider

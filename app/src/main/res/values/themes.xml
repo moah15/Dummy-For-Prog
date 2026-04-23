@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.BudgetQuest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/teal_primary</item>
         <item name="colorPrimaryVariant">@color/teal_dark</item>
@@ -6,5 +7,30 @@
         <item name="colorSurface">@color/surface</item>
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor">@color/background</item>
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/teal_primary</item>
+        <item name="colorControlHighlight">@color/teal_dark</item>
     </style>
+
+    <!-- Splash screen theme — no action bar, full dark background -->
+    <style name="Theme.BudgetQuest.Splash" parent="Theme.BudgetQuest">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="BudgetQuestInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/teal_primary</item>
+        <item name="boxBackgroundColor">@color/input_background</item>
+        <item name="hintTextColor">@color/teal_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.BudgetQuest.Body"
+        parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

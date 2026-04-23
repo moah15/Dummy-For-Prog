@@ -29,7 +29,7 @@
             android:text="BudgetQuest"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white"
             android:layout_marginBottom="4dp"/>
 
         <TextView
@@ -44,14 +44,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/BudgetQuestInput"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
                 android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/BudgetQuestInput"
             app:passwordToggleEnabled="true"
             android:layout_marginBottom="24dp">
 
@@ -68,7 +69,8 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_secondary"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>

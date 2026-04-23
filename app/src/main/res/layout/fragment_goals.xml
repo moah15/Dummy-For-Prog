@@ -12,7 +12,7 @@
         android:text="Savings Goals"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/white"
         android:layout_marginBottom="16dp"/>
 
     <Button

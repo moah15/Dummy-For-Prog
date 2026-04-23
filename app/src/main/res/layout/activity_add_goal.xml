@@ -18,16 +18,23 @@
             android:text="Create New Goal"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="24dp"/>
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set a savings target to work towards"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Goal Name -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Goal Name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:hintTextColor="@color/text_secondary"
-            app:boxStrokeColor="@color/teal_primary"
+            android:hint="Goal Name (e.g. Vacation, New Car)"
+            style="@style/BudgetQuestInput"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -40,13 +47,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Target Amount -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Target Amount (R)"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:hintTextColor="@color/text_secondary"
-            app:boxStrokeColor="@color/teal_primary"
+            style="@style/BudgetQuestInput"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -59,14 +65,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Target Date — tapping opens date picker -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Target Date (YYYY-MM-DD)"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:hintTextColor="@color/text_secondary"
-            app:boxStrokeColor="@color/teal_primary"
-            android:layout_marginBottom="24dp">
+            android:hint="Target Date"
+            style="@style/BudgetQuestInput"
+            android:layout_marginBottom="32dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTargetDate"
@@ -74,7 +79,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_secondary"
-                android:inputType="text"/>
+                android:inputType="none"
+                android:focusable="true"
+                android:clickable="true"
+                android:cursorVisible="false"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,6 +93,7 @@
             android:text="Save Goal"
             android:backgroundTint="@color/teal_primary"
             android:textColor="@color/background"
+            android:textSize="16sp"
             android:layout_marginBottom="12dp"/>
 
         <Button
