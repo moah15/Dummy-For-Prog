@@ -17,7 +17,7 @@
             android:text="Add Transaction"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/white"
             android:layout_marginBottom="24dp"/>
 
         <!-- Amount -->
@@ -25,9 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Amount (R)"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:hintTextColor="@color/text_secondary"
-            app:boxStrokeColor="@color/teal_primary"
+            style="@style/BudgetQuestInput"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -36,8 +34,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_secondary"
-                android:inputType="numberDecimal"
-                android:backgroundTint="@color/surface"/>
+                android:inputType="numberDecimal"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,9 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Description"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:hintTextColor="@color/text_secondary"
-            app:boxStrokeColor="@color/teal_primary"
+            style="@style/BudgetQuestInput"
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -57,8 +52,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_secondary"
-                android:inputType="text"
-                android:backgroundTint="@color/surface"/>
+                android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Select Date"
-            android:backgroundTint="@color/surface"
+            android:backgroundTint="@color/input_background"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
@@ -94,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Select Start Time"
-            android:backgroundTint="@color/surface"
+            android:backgroundTint="@color/input_background"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
@@ -112,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Select End Time"
-            android:backgroundTint="@color/surface"
+            android:backgroundTint="@color/input_background"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
 
@@ -125,69 +119,104 @@
             android:textSize="12sp"
             android:layout_marginBottom="4dp"/>
 
-        <Spinner
-            android:id="@+id/spinnerCategory"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@color/surface"
-            android:backgroundTint="@color/surface"
-            android:popupBackground="@color/surface"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/input_background"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:popupBackground="@color/surface"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"/>
+
+        </androidx.cardview.widget.CardView>
 
         <!-- Income toggle -->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:background="@color/surface"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/input_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Mark as Income"
-                android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
 
-            <Switch
-                android:id="@+id/switchIncome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:thumbTint="@color/teal_primary"
-                android:trackTint="@color/divider"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mark as Income"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
 
-        </LinearLayout>
+                <Switch
+                    android:id="@+id/switchIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="@color/teal_primary"
+                    android:trackTint="@color/divider"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <!-- SeekBar -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Monthly Budget Goal"
-            android:textColor="@color/text_secondary"
-            android:textSize="12sp"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:id="@+id/tvSeekBarValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="R0"
-            android:textColor="@color/teal_primary"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp"/>
-
-        <SeekBar
-            android:id="@+id/seekBarGoal"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="10000"
-            android:progress="0"
-            android:progressTint="@color/teal_primary"
-            android:thumbTint="@color/teal_primary"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/input_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monthly Budget Goal"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvSeekBarValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R0"
+                    android:textColor="@color/teal_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <SeekBar
+                    android:id="@+id/seekBarGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="10000"
+                    android:progress="0"
+                    android:progressTint="@color/teal_primary"
+                    android:thumbTint="@color/teal_primary"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <!-- Photo -->
         <TextView
@@ -210,7 +239,7 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Camera"
-                android:backgroundTint="@color/surface"
+                android:backgroundTint="@color/input_background"
                 android:textColor="@color/teal_primary"
                 android:layout_marginEnd="8dp"/>
 
@@ -220,18 +249,27 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Gallery"
-                android:backgroundTint="@color/surface"
+                android:backgroundTint="@color/input_background"
                 android:textColor="@color/teal_primary"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/ivPhotoPreview"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPhotoPreview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:visibility="gone"
-            android:layout_marginBottom="24dp"/>
+            app:cardBackgroundColor="@color/input_background"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:id="@+id/ivPhotoPreview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"/>
+
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/btnSaveExpense"
