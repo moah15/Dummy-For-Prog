@@ -1,0 +1,63 @@
+# BudgetQuest GitHub Actions Workflow
+# Automatically builds and tests the app on every push
+# Reference: https://github.com/marketplace/actions/automated-build-android-app-with-github-action
+
+name: BudgetQuest CI Build
+
+env:
+  main_project_module: app
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 - Check out the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2 - Set current date for artifact naming
+      - name: Set current date as env variable
+        run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      # Step 3 - Set repository name
+      - name: Set repository name as env variable
+        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+
+      # Step 4 - Set up Java 17
+      - name: Set Up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          cache: 'gradle'
+
+      # Step 5 - Make gradlew executable on Linux
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      # Step 6 - Run unit tests
+      - name: Run unit tests
+        run: ./gradlew test
+
+      # Step 7 - Build the full project
+      - name: Build project
+        run: ./gradlew build
+
+      # Step 8 - Build debug APK
+      - name: Build debug APK
+        run: ./gradlew assembleDebug
+
+      # Step 9 - Upload debug APK as downloadable artifact
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.date_today }} - BudgetQuest - APK Debug
+          path: ${{ env.main_project_module }}/build/outputs/apk/debug/
