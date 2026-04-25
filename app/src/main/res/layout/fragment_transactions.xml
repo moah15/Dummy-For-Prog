@@ -7,6 +7,7 @@
     android:background="@color/background"
     android:padding="16dp">
 
+    <!-- Screen title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
         android:textColor="@color/white"
         android:layout_marginBottom="16dp"/>
 
+    <!-- Add transaction button -->
     <Button
         android:id="@+id/btnAddExpense"
         android:layout_width="match_parent"
@@ -25,12 +27,12 @@
         android:textColor="@color/background"
         android:layout_marginBottom="12dp"/>
 
-    <!-- Filter buttons -->
+    <!-- Type filter buttons row -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
+        android:layout_marginBottom="8dp">
 
         <Button
             android:id="@+id/btnFilterAll"
@@ -66,12 +68,12 @@
 
     </LinearLayout>
 
-    <!-- Date filter row -->
+    <!-- Date range filter row -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
+        android:layout_marginBottom="8dp">
 
         <Button
             android:id="@+id/btnStartDate"
@@ -96,17 +98,49 @@
 
     </LinearLayout>
 
+    <!-- Category filter spinner -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/input_background"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp">
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:popupBackground="@color/surface"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Reset all filters button -->
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Reset Filters"
+        android:backgroundTint="@color/surface"
+        android:textColor="@color/teal_primary"
+        android:textSize="12sp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Empty state message -->
     <TextView
         android:id="@+id/tvNoTransactions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No transactions yet. Add your first one!"
+        android:text="No transactions found."
         android:textColor="@color/text_secondary"
         android:textSize="14sp"
         android:visibility="gone"
         android:layout_gravity="center"
         android:layout_marginTop="32dp"/>
 
+    <!-- Transaction list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransactions"
         android:layout_width="match_parent"
